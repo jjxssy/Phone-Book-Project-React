@@ -1,0 +1,207 @@
+/* Home component styles */
+.homeContainer {
+  min-height: calc(100vh - 15rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7ff 0%, #e0e8ff 100%);
+}
+
+.contentWrapper {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  background-color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.leftPanel {
+  flex: 1;
+  padding: 4rem;
+  background: linear-gradient(135deg, #7f7fd5, #86a8e7, #91eae4);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftPanel h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.features {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.featureIcon {
+  font-size: 2.4rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.feature p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.rightPanel {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loginForm h2 {
+  font-size: 2.4rem;
+  color: #4a4a68;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.errorMessage {
+  background-color: #fff0f0;
+  color: #e74c3c;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 1.4rem;
+  color: #4a4a68;
+  font-weight: 500;
+}
+
+.formGroup input {
+  padding: 1.2rem;
+  border: 2px solid #e0e8ff;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  transition: var(--transition);
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #b8c6ff;
+  box-shadow: 0 0 0 3px rgba(184, 198, 255, 0.3);
+}
+
+.loginButton {
+  background: linear-gradient(135deg, #7f7fd5, #86a8e7);
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.loginButton:hover {
+  background: linear-gradient(135deg, #6a6ad5, #7698e7);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.loginButton:active {
+  transform: translateY(1px);
+}
+
+.demoCredentials {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9ff;
+  border-radius: 0.8rem;
+  font-size: 1.3rem;
+  color: #5a75db;
+  text-align: center;
+}
+
+.demoCredentials p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .contentWrapper {
+    flex-direction: column;
+    max-width: 600px;
+  }
+  
+  .leftPanel {
+    padding: 3rem;
+  }
+  
+  .rightPanel {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .homeContainer {
+    padding: 1rem;
+  }
+  
+  .leftPanel, .rightPanel {
+    padding: 2rem;
+  }
+  
+  .feature {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

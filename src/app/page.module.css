@@ -1,0 +1,138 @@
+/* Shared styles for all pages */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Auth container */
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Button styles */
+.button {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75em 1.5em;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button:hover {
+  background: var(--clr-primary-dark);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.buttonPrimary {
+  background: linear-gradient(135deg, #7f7fd5, #86a8e7);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.buttonSecondary {
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  border: 1px solid var(--clr-grey-5);
+}
+
+.buttonLarge {
+  padding: 1em 2em;
+  font-size: 1.6rem;
+}
+
+.buttonSmall {
+  padding: 0.5em 1em;
+  font-size: 1.2rem;
+}
+
+/* Form styles */
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--clr-grey-1);
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--clr-grey-5);
+  border-radius: var(--radius);
+  font-size: 1.4rem;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+}
+
+/* Card styles */
+.card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--clr-grey-10);
+  padding-bottom: 1rem;
+}
+
+.cardTitle {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.cardBody {
+  font-size: 1.4rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    width: 95vw;
+    padding: 1.5rem 0;
+  }
+  
+  .button {
+    width: 100%;
+  }
+}
