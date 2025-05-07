@@ -38,26 +38,15 @@ const ContactList = () => {
     return matchesSearch && matchesTag;
   });
 
-  /**
-   * Displays the info modal for a selected contact
-   * @param {Object} contact - The contact to display info for
-   */
   const handleViewInfo = (contact) => {
     setSelectedContact(contact);
     setShowInfoModal(true);
   };
 
-  /**
-   * Closes the info modal
-   */
   const handleCloseInfoModal = () => {
     setShowInfoModal(false);
   };
 
-  /**
-   * Opens edit modal and populates form with contact data
-   * @param {Object} contact - The contact to edit
-   */
   const handleEdit = (contact) => {
     setSelectedContact(contact);
     setEditFormData({
@@ -70,18 +59,11 @@ const ContactList = () => {
     setShowEditModal(true);
   };
 
-  /**
-   * Closes the edit modal and resets delete confirmation
-   */
   const handleCloseEditModal = () => {
     setShowEditModal(false);
     setShowDeleteConfirm(false);
   };
 
-  /**
-   * Handles changes in the edit form inputs
-   * @param {Event} e - The change event
-   */
   const handleEditFormChange = (e) => {
     const { name, value, type, checked } = e.target;
     
@@ -98,10 +80,6 @@ const ContactList = () => {
     }
   };
 
-  /**
-   * Toggles a tag in the edit form
-   * @param {string} tag - The tag to toggle
-   */
   const handleTagToggle = (tag) => {
     const updatedTags = editFormData.tags.includes(tag)
       ? editFormData.tags.filter(t => t !== tag)
@@ -113,10 +91,6 @@ const ContactList = () => {
     });
   };
 
-  /**
-   * Saves the edited contact
-   * @param {Event} e - The form submit event
-   */
   const handleSaveEdit = (e) => {
     e.preventDefault();
     
@@ -140,9 +114,6 @@ const ContactList = () => {
     setShowEditModal(false);
   };
 
-  /**
-   * Opens the new contact modal with empty form
-   */
   const handleAddNewContact = () => {
     // Reset form data for new contact
     setEditFormData({
@@ -156,17 +127,10 @@ const ContactList = () => {
     setShowNewContactModal(true);
   };
 
-  /**
-   * Closes the new contact modal
-   */
   const handleCloseNewContactModal = () => {
     setShowNewContactModal(false);
   };
 
-  /**
-   * Saves a new contact
-   * @param {Event} e - The form submit event
-   */
   const handleSaveNewContact = (e) => {
     e.preventDefault();
     
@@ -191,9 +155,6 @@ const ContactList = () => {
     setShowNewContactModal(false);
   };
 
-  /**
-   * Deletes the selected contact
-   */
   const handleDeleteContact = () => {
     if (!selectedContact) return;
     
@@ -204,9 +165,6 @@ const ContactList = () => {
     setShowDeleteConfirm(false);
   };
 
-  /**
-   * Toggles the delete confirmation dialog
-   */
   const toggleDeleteConfirm = () => {
     setShowDeleteConfirm(!showDeleteConfirm);
   };

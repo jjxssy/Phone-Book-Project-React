@@ -4,21 +4,18 @@ import classes from './contact.module.css';
 /**
  * Contact component for displaying individual contact information
  * @param {Object} props - Component props
- * @param {Object} props.contact - Contact data object containing name, phone, email, avatar, and tags
- * @param {Function} props.onViewInfo - Callback function for viewing detailed contact information
- * @param {Function} props.onEdit - Callback function for editing contact
- * @returns {JSX.Element} - Rendered contact card component
+ * @param {Object} props.contact - Contact data object
+ * @param {Function} props.onViewInfo - Function to handle viewing contact info
+ * @param {Function} props.onEdit - Function to handle editing contact
+ * @returns {JSX.Element} - Rendered component
  */
 const Contact = ({ contact, onViewInfo, onEdit }) => {
-  // State to track if the contact card is expanded
   const [expanded, setExpanded] = useState(false);
   
-  // Toggle the expanded state of the contact card
   const toggleExpand = () => {
     setExpanded(!expanded);
   };
 
-  // Handle click on view info button, preventing event propagation
   const handleViewInfo = (e) => {
     e.stopPropagation();
     if (onViewInfo) {
@@ -26,7 +23,6 @@ const Contact = ({ contact, onViewInfo, onEdit }) => {
     }
   };
   
-  // Handle click on edit button, preventing event propagation
   const handleEdit = (e) => {
     e.stopPropagation();
     if (onEdit) {
@@ -35,28 +31,22 @@ const Contact = ({ contact, onViewInfo, onEdit }) => {
   };
 
   return (
-    // Main contact card container with dynamic expansion class
     <div className={`${classes.contact} ${expanded ? classes.expanded : ''}`}>
-      {/* Contact header section with avatar and basic info */}
       <div className={classes.contactHeader} onClick={toggleExpand}>
-        {/* Avatar section with optional favorite star */}
         <div className={classes.avatarContainer}>
           <img 
             src={contact.avatar} 
             alt={`${contact.name}'s avatar`} 
             className={classes.avatar} 
           />
-          {/* Render star icon if contact is marked as favorite */}
           {contact.favorite && <span className={classes.favorite}>★</span>}
         </div>
         
-        {/* Basic contact information display */}
         <div className={classes.contactInfo}>
           <h3 className={classes.name}>{contact.name}</h3>
           <p className={classes.phone}>{contact.phone}</p>
         </div>
         
-        {/* Expand/collapse button */}
         <button 
           className={classes.expandButton}
           aria-label={expanded ? "Collapse contact" : "Expand contact"}
@@ -65,9 +55,7 @@ const Contact = ({ contact, onViewInfo, onEdit }) => {
         </button>
       </div>
       
-      {/* Expandable details section */}
       <div className={classes.contactDetails}>
-        {/* Email information row */}
         <div className={classes.detailRow}>
           <span className={classes.detailLabel}>Email:</span>
           <a href={`mailto:${contact.email}`} className={classes.detailValue}>
@@ -75,7 +63,6 @@ const Contact = ({ contact, onViewInfo, onEdit }) => {
           </a>
         </div>
         
-        {/* Tags section - only rendered if tags exist */}
         {contact.tags && contact.tags.length > 0 && (
           <div className={classes.tags}>
             {contact.tags.map((tag, index) => (
@@ -86,7 +73,6 @@ const Contact = ({ contact, onViewInfo, onEdit }) => {
           </div>
         )}
         
-        {/* Action buttons section */}
         <div className={classes.actions}>
           <button 
             className={classes.actionButton}
