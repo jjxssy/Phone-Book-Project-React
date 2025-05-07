@@ -1,17 +1,26 @@
 import React from 'react';
+// Importing scoped CSS module styles for this component
 import classes from './privacy.module.css';
+// Importing global page container styles
 import pageClasses from '../../app/page.module.css';
 
 /**
  * Privacy Policy page component
- * @returns {JSX.Element} - Rendered component
+ * Displays the privacy policy of the Phone Book App in sections.
+ * @returns {JSX.Element} - Rendered privacy policy page
  */
 function Privacy() {
   return (
+    // Main container that combines page-wide and component-specific styling
     <div className={`${pageClasses.container} ${classes.privacyContainer}`}>
+
+      {/* Page title */}
       <h1 className={classes.title}>Privacy Policy</h1>
       
+      {/* Main content wrapper */}
       <div className={classes.content}>
+        
+        {/* Section 1: Introduction */}
         <section className={classes.section}>
           <h2>1. Introduction</h2>
           <p>
@@ -19,25 +28,23 @@ function Privacy() {
             This Privacy Policy explains how we collect, use, and safeguard your information when you use our application.
           </p>
         </section>
-        
+
+        {/* Section 2: Data we collect from users */}
         <section className={classes.section}>
           <h2>2. Information We Collect</h2>
-          <p>
-            We collect the following types of information:
-          </p>
+          <p>We collect the following types of information:</p>
           <ul className={classes.list}>
-            <li><strong>Account Information:</strong> When you create an account, we collect your name, email address, and password.</li>
-            <li><strong>Contact Data:</strong> Information about your contacts that you choose to store in our application.</li>
-            <li><strong>Usage Data:</strong> Information about how you use our application, including features accessed and time spent.</li>
-            <li><strong>Device Information:</strong> Information about your device, including IP address, browser type, and operating system.</li>
+            <li><strong>Account Information:</strong> Basic credentials like name, email, and password.</li>
+            <li><strong>Contact Data:</strong> User-stored contacts in the app.</li>
+            <li><strong>Usage Data:</strong> App usage metrics like feature access and time spent.</li>
+            <li><strong>Device Information:</strong> Technical data such as IP address and OS.</li>
           </ul>
         </section>
-        
+
+        {/* Section 3: How the collected data is used */}
         <section className={classes.section}>
           <h2>3. How We Use Your Information</h2>
-          <p>
-            We use your information for the following purposes:
-          </p>
+          <p>We use your information for the following purposes:</p>
           <ul className={classes.list}>
             <li>To provide and maintain our service</li>
             <li>To notify you about changes to our service</li>
@@ -48,7 +55,8 @@ function Privacy() {
             <li>To detect, prevent, and address technical issues</li>
           </ul>
         </section>
-        
+
+        {/* Section 4: Security and data protection measures */}
         <section className={classes.section}>
           <h2>4. Data Storage and Security</h2>
           <p>
@@ -56,24 +64,22 @@ function Privacy() {
             alteration, disclosure, or destruction. Your data is stored on secure servers and is only accessible to authorized personnel.
           </p>
         </section>
-        
+
+        {/* Section 5: When and with whom data is shared */}
         <section className={classes.section}>
           <h2>5. Data Sharing and Third Parties</h2>
-          <p>
-            We do not sell your personal information to third parties. We may share your information with:
-          </p>
+          <p>We do not sell your personal information to third parties. We may share your information with:</p>
           <ul className={classes.list}>
             <li>Service providers who assist us in operating our application</li>
             <li>Business partners with your consent</li>
             <li>Law enforcement agencies when required by law</li>
           </ul>
         </section>
-        
+
+        {/* Section 6: User rights related to their data */}
         <section className={classes.section}>
           <h2>6. Your Data Protection Rights</h2>
-          <p>
-            Depending on your location, you may have the following rights regarding your personal data:
-          </p>
+          <p>Depending on your location, you may have the following rights regarding your personal data:</p>
           <ul className={classes.list}>
             <li>The right to access your personal data</li>
             <li>The right to rectify inaccurate personal data</li>
@@ -83,7 +89,8 @@ function Privacy() {
             <li>The right to object to processing of your personal data</li>
           </ul>
         </section>
-        
+
+        {/* Section 7: Use of cookies and tracking */}
         <section className={classes.section}>
           <h2>7. Cookies and Tracking Technologies</h2>
           <p>
@@ -91,7 +98,8 @@ function Privacy() {
             You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
           </p>
         </section>
-        
+
+        {/* Section 8: Policy regarding children under 13 */}
         <section className={classes.section}>
           <h2>8. Children's Privacy</h2>
           <p>
@@ -100,7 +108,8 @@ function Privacy() {
             we will delete it immediately.
           </p>
         </section>
-        
+
+        {/* Section 9: How policy changes will be communicated */}
         <section className={classes.section}>
           <h2>9. Changes to This Privacy Policy</h2>
           <p>
@@ -108,18 +117,18 @@ function Privacy() {
             Privacy Policy on this page and updating the "Last Updated" date.
           </p>
         </section>
-        
+
+        {/* Section 10: Contact details for privacy questions */}
         <section className={classes.section}>
           <h2>10. Contact Us</h2>
-          <p>
-            If you have any questions about this Privacy Policy, please contact us at:
-          </p>
+          <p>If you have any questions about this Privacy Policy, please contact us at:</p>
           <p className={classes.contactInfo}>
             Email: privacy@phonebookapp.com<br />
             Address: 123 App Street, Tech City, TC 12345
           </p>
         </section>
-        
+
+        {/* Last updated note */}
         <div className={classes.lastUpdated}>
           <p>Last Updated: April 2, 2025</p>
         </div>

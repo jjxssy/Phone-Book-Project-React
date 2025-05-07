@@ -3,20 +3,34 @@ import classes from './help.module.css';
 import pageClasses from '../../app/page.module.css';
 
 /**
- * Help page component
+ * Help page component that provides documentation and support features
+ * Includes sections for getting started, managing contacts, searching,
+ * account settings, troubleshooting, FAQ, and contact support
  * @returns {JSX.Element} - Rendered component
  */
 function Help() {
+  // Track which help section is currently active
   const [activeSection, setActiveSection] = useState('getting-started');
+  
+  // State for support ticket form data
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  
+  // Track form validation errors
   const [formErrors, setFormErrors] = useState({});
+  
+  // Track form submission status (success/error)
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  /**
+   * Handles clicking on a section in the navigation
+   * Activates the section and scrolls to it smoothly
+   * @param {string} sectionId - ID of the section to activate
+   */
   const handleSectionClick = (sectionId) => {
     setActiveSection(sectionId);
     
@@ -27,6 +41,11 @@ function Help() {
     }
   };
 
+  /**
+   * Handles changes to form input fields
+   * Updates form data and clears any existing errors
+   * @param {Event} e - Input change event
+   */
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData({
@@ -43,6 +62,10 @@ function Help() {
     }
   };
 
+  /**
+   * Validates all form fields
+   * @returns {Object} Object containing validation errors
+   */
   const validateForm = () => {
     const errors = {};
     
@@ -67,6 +90,11 @@ function Help() {
     return errors;
   };
 
+  /**
+   * Handles form submission
+   * Validates form, shows success/error status, and resets form
+   * @param {Event} e - Form submission event
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -102,9 +130,11 @@ function Help() {
 
   return (
     <div className={`${pageClasses.container} ${classes.helpContainer}`}>
+      {/* Help Center Title */}
       <h1 className={classes.title}>Help Center</h1>
       
       <div className={classes.helpContent}>
+        {/* Navigation Sidebar */}
         <aside className={classes.sidebar}>
           <nav className={classes.nav}>
             <ul className={classes.navList}>
@@ -168,7 +198,9 @@ function Help() {
           </nav>
         </aside>
         
+        {/* Main Content Sections */}
         <main className={classes.mainContent}>
+          {/* Getting Started Section */}
           <section id="getting-started" className={classes.section}>
             <h2>Getting Started</h2>
             <div className={classes.sectionContent}>
@@ -214,6 +246,7 @@ function Help() {
             </div>
           </section>
           
+          {/* Managing Contacts Section */}
           <section id="managing-contacts" className={classes.section}>
             <h2>Managing Contacts</h2>
             <div className={classes.sectionContent}>
@@ -263,6 +296,7 @@ function Help() {
             </div>
           </section>
           
+          {/* Searching & Filtering Section */}
           <section id="searching" className={classes.section}>
             <h2>Searching & Filtering</h2>
             <div className={classes.sectionContent}>
@@ -297,6 +331,7 @@ function Help() {
             </div>
           </section>
           
+          {/* Account Settings Section */}
           <section id="account" className={classes.section}>
             <h2>Account Settings</h2>
             <div className={classes.sectionContent}>
@@ -326,6 +361,7 @@ function Help() {
             </div>
           </section>
           
+          {/* Troubleshooting Section */}
           <section id="troubleshooting" className={classes.section}>
             <h2>Troubleshooting</h2>
             <div className={classes.sectionContent}>
@@ -384,6 +420,7 @@ function Help() {
             </div>
           </section>
           
+          {/* FAQ Section */}
           <section id="faq" className={classes.section}>
             <h2>Frequently Asked Questions</h2>
             <div className={classes.sectionContent}>
@@ -436,6 +473,7 @@ function Help() {
             </div>
           </section>
           
+          {/* Contact Support Section */}
           <section id="contact-support" className={classes.section}>
             <h2>Contact Support</h2>
             <div className={classes.sectionContent}>
