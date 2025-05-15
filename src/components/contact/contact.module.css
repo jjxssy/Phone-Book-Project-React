@@ -1,0 +1,195 @@
+.contactCard {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid #f0f3f9;
+}
+
+.contactCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(106, 130, 251, 0.15);
+  border-color: #e6eeff;
+}
+
+.compactCard {
+  padding: 0.85rem 1.1rem;
+}
+
+.avatarContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f3f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.compactCard .avatar {
+  width: 45px;
+  height: 45px;
+  border-width: 2px;
+}
+
+.favoriteButton {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background-color: white;
+  border: 1px solid #f0f3f9;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.favoriteButton:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.starIcon {
+  color: #ffcb6b;
+  font-size: 12px;
+}
+
+.contactInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.contactName {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compactCard .contactName {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.contactDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c7a93;
+}
+
+.compactCard .contactDetail {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.contactIcon {
+  color: #6a82fb;
+  font-size: 0.9rem;
+}
+
+.tagsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  background-color: #f0f3f9;
+  color: #6a82fb;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #e9edf4;
+}
+
+.actions {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  padding: 0.6rem;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.editButton {
+  color: #6a82fb;
+}
+
+.deleteButton {
+  color: #ff8a8a;
+}
+
+.editButton:hover {
+  background-color: rgba(106, 130, 251, 0.1);
+  transform: translateY(-2px);
+}
+
+.deleteButton:hover {
+  background-color: rgba(255, 138, 138, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contactCard {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .compactCard .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contactName {
+    font-size: 1rem;
+  }
+} 

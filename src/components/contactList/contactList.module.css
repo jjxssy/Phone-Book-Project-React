@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #7f7fd5, #86a8e7);
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -521,13 +521,13 @@
 .deleteConfirmation {
   padding: 2rem;
   text-align: center;
-  animation: fadeIn 0.3s ease forwards;
+  animation: fadeIn 0.25s ease-out forwards;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
   to {
     opacity: 1;

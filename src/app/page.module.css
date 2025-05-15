@@ -1,8 +1,8 @@
 /* Shared styles for all pages */
 .page {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .main {
@@ -12,10 +12,11 @@
 }
 
 .container {
-  width: 90vw;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.5rem;
+  width: 100%;
+  flex: 1;
 }
 
 /* Auth container */
@@ -128,8 +129,7 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .container {
-    width: 95vw;
-    padding: 1.5rem 0;
+    padding: 1rem;
   }
   
   .button {

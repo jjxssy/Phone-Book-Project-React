@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classes from './footer.module.css';
 
 /**
- * Footer component
+ * Footer component with copyright information
  * @returns {JSX.Element} - Rendered component
  */
 function Footer() {
@@ -11,14 +10,17 @@ function Footer() {
   
   return (
     <footer className={classes.footer}>
-      <div className={classes.container}>
-        <div className={classes.copyright}>
-          <p>&copy; {currentYear} Phone Book App. All rights reserved.</p>
-        </div>
-        <div className={classes.links}>
-          <Link to="/terms" className={classes.link}>Terms</Link>
-          <Link to="/privacy" className={classes.link}>Privacy</Link>
-          <Link to="/help" className={classes.link}>Help</Link>
+      <div className={classes.footerContainer}>
+        <div className={classes.footerContent}>
+          <p className={classes.copyright}>
+            &copy; {currentYear} Phone Book Application. All rights reserved.
+          </p>
+          <p className={classes.projectInfo}>
+            Created as a React course project
+          </p>
+          <p className={classes.projectInfo}>
+            Made by Yasmin Bits & Samya Bahouth
+          </p>
         </div>
       </div>
     </footer>

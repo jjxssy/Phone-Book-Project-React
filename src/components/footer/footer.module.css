@@ -1,49 +1,48 @@
 .footer {
-  background-color: #f5f7fa;
-  padding: 2rem 0;
-  border-top: 1px solid #e0e8ff;
+  background-color: #f8fafd;
+  border-top: 1px solid #e9edf4;
+  padding: 1.8rem 0;
+  margin-top: auto;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.03);
 }
 
-.container {
-  width: 90vw;
+.footerContainer {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.footerContent {
+  text-align: center;
 }
 
 .copyright {
-  font-size: 1.4rem;
-  color: #666;
+  color: #6c7a93;
+  font-size: 0.95rem;
+  margin: 0 0 0.6rem 0;
 }
 
-.links {
-  display: flex;
-  gap: 2rem;
-}
-
-.link {
-  font-size: 1.4rem;
-  color: #7f7fd5;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.link:hover {
-  color: #6a6ad5;
-  text-decoration: underline;
+.projectInfo {
+  color: #a0aec0;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+  .footer {
+    padding: 1.5rem 0;
   }
   
-  .links {
-    justify-content: center;
+  .footerContainer {
+    padding: 0 1rem;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+  }
+  
+  .projectInfo {
+    font-size: 0.8rem;
   }
 }

@@ -1,0 +1,435 @@
+.groupedContactsPageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.pageHeader h1 {
+  font-size: 2.2rem;
+  color: #495057;
+  margin: 0;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a6c0fe 0%, #6a82fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.adminActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.addButton,
+.addGroupButton,
+.clearGroupButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addButton {
+  background: linear-gradient(135deg, #a6c0fe 0%, #6a82fb 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(106, 130, 251, 0.3);
+}
+
+.addGroupButton {
+  background: linear-gradient(135deg, #c2e9fb 0%, #81d4fa 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(129, 212, 250, 0.3);
+}
+
+.clearGroupButton {
+  background-color: #fff;
+  color: #ff8a8a;
+  border: 1px solid #ffd1d1;
+}
+
+.addButton:hover,
+.addGroupButton:hover {
+  transform: translateY(-3px);
+}
+
+.addButton:hover {
+  box-shadow: 0 6px 15px rgba(106, 130, 251, 0.4);
+}
+
+.addGroupButton:hover {
+  box-shadow: 0 6px 15px rgba(129, 212, 250, 0.4);
+}
+
+.clearGroupButton:hover {
+  background-color: #fff7f7;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(255, 138, 138, 0.15);
+}
+
+.pageContent {
+  display: flex;
+  gap: 2rem;
+}
+
+.groupsSidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f3f9;
+  height: fit-content;
+}
+
+.groupsHeader {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.groupButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  color: #6c7a93;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.groupButton:hover {
+  background-color: #f0f3f9;
+}
+
+.activeGroup {
+  background-color: #d8e2ff;
+  color: #4a65cc;
+  font-weight: 600;
+}
+
+.groupIcon {
+  color: #6a82fb;
+  font-size: 0.9rem;
+}
+
+.contactsSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.toolbarSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f3f9;
+}
+
+.searchContainer {
+  flex: 1;
+  min-width: 250px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid #e9edf4;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: #f8fafd;
+}
+
+.searchInput:focus {
+  border-color: #b0c3f9;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(176, 195, 249, 0.2);
+  background-color: #fff;
+}
+
+.filterActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filterButton {
+  padding: 0.85rem 1.2rem;
+  border: 1px solid #e9edf4;
+  border-radius: 12px;
+  background-color: #f8fafd;
+  color: #6c7a93;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+  background-color: #f0f3f9;
+  border-color: #d8e2ff;
+}
+
+.activeFilter {
+  background-color: #d8e2ff;
+  border-color: #b0c3f9;
+  color: #4a65cc;
+}
+
+.activeGroupHeader {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #e9edf4;
+}
+
+.sortingHeader {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background-color: white;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f3f9;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #6c7a93;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sortButton:hover {
+  color: #6a82fb;
+}
+
+.sortIcon {
+  font-size: 0.9rem;
+  color: #b0c3f9;
+}
+
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loadingMessage,
+.errorMessage,
+.emptyMessage {
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f3f9;
+  background-color: white;
+}
+
+.loadingMessage {
+  color: #6c7a93;
+}
+
+.errorMessage {
+  color: #ff8a8a;
+  border-color: #ffd1d1;
+  background-color: #fff7f7;
+}
+
+.emptyMessage {
+  color: #6c7a93;
+  padding: 3.5rem 2.5rem;
+}
+
+.confirmationModal {
+  text-align: center;
+}
+
+.confirmationModal p {
+  margin-bottom: 1rem;
+  color: #6c7a93;
+  font-size: 1.05rem;
+}
+
+.addGroupModal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: #6c7a93;
+  font-size: 0.95rem;
+}
+
+.formGroup input {
+  padding: 0.85rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #e9edf4;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: #f8fafd;
+}
+
+.formGroup input:focus {
+  border-color: #b0c3f9;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(176, 195, 249, 0.2);
+  background-color: #fff;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancelButton,
+.deleteButton,
+.submitButton {
+  padding: 0.85rem 1.8rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelButton {
+  background-color: #f0f3f9;
+  border: 1px solid #e9edf4;
+  color: #6c7a93;
+}
+
+.deleteButton {
+  background: linear-gradient(135deg, #ff9a9e 0%, #ff8a8a 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 138, 138, 0.3);
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #a6c0fe 0%, #6a82fb 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 10px rgba(106, 130, 251, 0.3);
+}
+
+.cancelButton:hover {
+  background-color: #e9edf4;
+}
+
+.deleteButton:hover {
+  box-shadow: 0 6px 15px rgba(255, 138, 138, 0.4);
+  transform: translateY(-2px);
+}
+
+.submitButton:hover {
+  box-shadow: 0 6px 15px rgba(106, 130, 251, 0.4);
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 10px rgba(106, 130, 251, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .pageContent {
+    flex-direction: column;
+  }
+  
+  .groupsSidebar {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .groupedContactsPageContainer {
+    padding: 1rem;
+  }
+  
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .adminActions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .addButton,
+  .addGroupButton,
+  .clearGroupButton {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .toolbarSection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filterActions {
+    width: 100%;
+  }
+  
+  .filterButton {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .sortingHeader {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+  }
+} 

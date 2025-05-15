@@ -1,36 +1,37 @@
 /* Contact component styles with pastel colors */
 .contact {
   background-color: #fff;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   box-shadow: var(--light-shadow);
   margin-bottom: 1.5rem;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-left: 4px solid #e0e0ff;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-left: 4px solid var(--clr-primary-light);
 }
 
 .contact:hover {
   box-shadow: var(--dark-shadow);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  border-left-color: var(--clr-primary);
 }
 
 .contact.expanded {
   box-shadow: var(--dark-shadow);
-  border-left-color: #b8c6ff;
+  border-left-color: var(--clr-primary-dark);
 }
 
 .contactHeader {
   display: flex;
   align-items: center;
-  padding: 1.2rem;
+  padding: 1.5rem;
   cursor: pointer;
-  background-color: #f8f9ff;
+  background-color: var(--clr-grey-7);
   position: relative;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contactHeader:hover {
-  background-color: #f0f4ff;
+  background-color: var(--clr-grey-6);
 }
 
 .avatarContainer {
@@ -43,21 +44,23 @@
   height: 5rem;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #e6e6fa;
-  transition: all 0.3s ease;
+  border: 3px solid var(--clr-primary-light);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 8px rgba(165, 180, 252, 0.15);
 }
 
 .contact:hover .avatar {
-  border-color: #d8b4fe;
+  border-color: var(--clr-primary);
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(165, 180, 252, 0.25);
 }
 
 .favorite {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #ffd6e0;
-  color: #ff6b95;
+  background-color: #fecdd3;
+  color: #f43f5e;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -66,11 +69,13 @@
   justify-content: center;
   font-size: 1.2rem;
   border: 2px solid white;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 4px rgba(244, 63, 94, 0.15);
 }
 
 .contact:hover .favorite {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  box-shadow: 0 3px 6px rgba(244, 63, 94, 0.2);
 }
 
 .contactInfo {
@@ -78,37 +83,45 @@
 }
 
 .name {
-  color: #4a4a68;
+  color: var(--clr-grey-1);
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .contact:hover .name {
-  color: #3a3a58;
+  color: var(--clr-primary-dark);
 }
 
 .phone {
-  color: #8a8a9a;
+  color: var(--clr-grey-3);
   font-size: 1.4rem;
   margin: 0;
-  transition: color 0.3s ease;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .expandButton {
   background: none;
   border: none;
-  color: #b8c6ff;
+  color: var(--clr-primary);
   font-size: 1.2rem;
   cursor: pointer;
   padding: 0.5em;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .expandButton:hover {
-  color: #7b8cde;
-  background: none;
+  color: var(--clr-primary-dark);
+  background-color: var(--clr-grey-6);
 }
 
 .contact.expanded .expandButton {
@@ -116,17 +129,17 @@
 }
 
 .contactDetails {
-  background-color: #fafbff;
-  border-top: 1px solid #f0f0ff;
+  background-color: var(--clr-grey-8);
+  border-top: 1px solid var(--clr-grey-5);
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
   transition: 
-    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0 1.5rem;
   will-change: max-height, opacity, transform, padding;
 }
@@ -163,18 +176,21 @@
 }
 
 .tag {
-  background-color: #e0e8ff;
-  color: #5a75db;
-  padding: 0.4rem 1rem;
+  background-color: var(--clr-primary-light);
+  color: var(--clr-primary-dark);
+  padding: 0.5rem 1.2rem;
   border-radius: 2rem;
   font-size: 1.2rem;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 4px rgba(165, 180, 252, 0.1);
 }
 
 .tag:hover {
-  background-color: #d0d8ff;
+  background-color: var(--clr-primary);
+  color: white;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(165, 180, 252, 0.2);
 }
 
 .actions {
@@ -185,33 +201,89 @@
 }
 
 .actionButton {
-  background-color: #f0f4ff;
-  color: #5a75db;
+  background-color: var(--clr-grey-6);
+  color: var(--clr-primary-dark);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 0.75em 1.5em;
   font-size: 1.3rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   flex: 1;
   justify-content: center;
   min-width: 8rem;
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  font-weight: 500;
 }
 
 .actionButton:hover {
   background-color: #d8e0ff;
-  color: #4a5fc7;
+  color: var(--clr-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .actionButton:active {
   transform: translateY(0);
+}
+
+/* Animation classes */
+.hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: none;
+}
+
+.fadeIn {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slideIn {
+  animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(244, 63, 94, 0.15);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(244, 63, 94, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(244, 63, 94, 0.15);
+  }
 }
 
 /* Responsive styles */
